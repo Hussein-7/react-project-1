@@ -1,0 +1,84 @@
+
+@mixin breakpoint ($point){
+    @if $point == mobile {
+        @media (max-width : 768px) {
+            @content;
+        }
+    }  @else if $point == small {
+        @media (min-width : 769px) and (max-width : 991.20px) {
+            @content;
+        }
+    }@else if $point == medium {
+        @media (min-width : 992px) and (max-width : 1199px) {
+            @content;
+        }
+    }
+    @else if $point == large {
+        @media (min-width : 1200px) {
+            @content;
+        }
+    }
+}
+
+
+@mixin flex-center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+@mixin flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin grid($col){
+    display: grid;
+    grid-template-columns: repeat($col,1fr);
+}
+
+@mixin gap($gap){
+    gap: $gap * 1rem;
+}
+
+@mixin circle ($di){
+    width: $di * 1px;
+    height: $di * 1px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@mixin radius ($px){
+    border-radius: $px * 1px;
+    -webkit-border-radius: $px * 1px;
+    -moz-border-radius: $px * 1px;
+    -ms-border-radius: $px * 1px;
+    -o-border-radius: $px * 1px;
+}
+
+@mixin translateY($translateY){
+    transform: translateY($translateY);
+    -webkit-transform: translateY($translateY);
+    -moz-transform: translateY($translateY);
+    -ms-transform: translateY($translateY);
+    -o-transform: translateY($translateY);
+}
+
+@mixin translate-center{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+}
